@@ -4,19 +4,21 @@
 
 # Summary
 
-### Download Mechanism
+### Download Function Mechanism
 
-The *fetch_coordinates* function (line 27) uses *BASE_URL*, a URL for making requests to DBHydro's database, to return station coordinates via the webscraping library *BeautifulSoup* and based on the contents of the *stations* array. It is iteratively called for each station in *stations*  (line 61), and the coordinates are stored in *station_data*, which is then converted into a dataframe (line 67). 
+The *fetch_coordinates* function (line 27) uses *BASE_URL*, a URL for making requests to DBHydro's database, to return station coordinates via the webscraping library *BeautifulSoup* and based on the contents of the *stations* array. 
+
+The function is iteratively called for each station in *stations*  (line 61), and the coordinates are stored in *station_data*, which is then converted into a dataframe (line 67). 
 
 ### Unit Conversion
 
 The station coordinates from DBHydro are formatted in degrees-minutes-seconds by default, so they are converted to decimal via dms_to_decimal (line 88). 
 
-### Download File
+### File Download
 
 The dataframe is then converted to a csv file and saved according to the definition of *output_file* (line 95). 
 
-Finally, The file is automatically opened using the *subprocess* library (line 91), but this can be commented out if desired.
+Finally, The file is automatically opened using the *subprocess* library (line 91), but this may be omitted if desired.
 
 # Instructions
 
